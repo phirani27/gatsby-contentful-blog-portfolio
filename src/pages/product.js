@@ -13,7 +13,7 @@ export default ({ data }) => {
       <StyledHero img={data.contactImage.childImageSharp.fluid}>
         <Banner title="National Pen Products" />
       </StyledHero>
-      <ProductItems/>
+      <ProductItems />
     </Layout>
   )
 }

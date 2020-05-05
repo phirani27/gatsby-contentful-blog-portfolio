@@ -1,17 +1,11 @@
 import React from "react"
 import { Helmet } from "react-helmet"
 import { graphql, useStaticQuery } from "gatsby"
-import favicon from '../../static/images/cov19.ico'
+import favicon from "../../static/images/cov19.ico"
 
 const SEO = ({ title, description }) => {
   const { site } = useStaticQuery(getData)
-  const {
-    siteDesc,
-    siteTitle,
-    siteUrl,
-    author,
-    image,
-  } = site.siteMetadata
+  const { siteDesc, siteTitle, siteUrl, author, image } = site.siteMetadata
 
   return (
     <Helmet htmlAttributes={{ lang: "en" }} title={`${title} | ${siteTitle}`}>

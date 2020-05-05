@@ -17,11 +17,7 @@ const Navbar = () => {
       <div className={styles.navCenter}>
         <div className={styles.navHeader}>
           <Anilink fade to="/" data-cy="logo">
-            <img 
-              className={styles.logoImg}
-              src={Logo} 
-              alt="logo" 
-            />
+            <img className={styles.logoImg} src={Logo} alt="logo" />
           </Anilink>
 
           <button

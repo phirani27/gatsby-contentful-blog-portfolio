@@ -16,15 +16,17 @@ exports.createPages = async ({ graphql, actions }) => {
           }
         }
       }
-      cTools{
-        products(where:"masterData(published=true) and key in (\\"PRD-VSIPI2V7\\",\\"PRD-ZKUSANIO\\",\\"PRD-PJTRNCEZ\\",\\"PRD-NFPCV9NS\\",\\"PRD-HIBJHDAP\\",\\"PRD-CWKRBO9W\\",\\"PRD-BTV2QQY3\\",\\"PRD-QWGCHDPQ\\")"){
+      cTools {
+        products(
+          where: "masterData(published=true) and key in (\\"PRD-VSIPI2V7\\",\\"PRD-ZKUSANIO\\",\\"PRD-PJTRNCEZ\\",\\"PRD-NFPCV9NS\\",\\"PRD-HIBJHDAP\\",\\"PRD-CWKRBO9W\\",\\"PRD-BTV2QQY3\\",\\"PRD-QWGCHDPQ\\")"
+        ) {
           count
-          results{
+          results {
             key
             id
-            masterData{
-              current{
-                slug(locale:"en-IE")
+            masterData {
+              current {
+                slug(locale: "en-IE")
               }
             }
           }
@@ -32,19 +34,19 @@ exports.createPages = async ({ graphql, actions }) => {
       }
     }
   `)
-  
-  const productTemplate = path.resolve('./src/templates/product-template.js');
-  data.cTools.products.results.forEach( (product) => {
+
+  const productTemplate = path.resolve("./src/templates/product-template.js")
+  data.cTools.products.results.forEach(product => {
     createPage({
       component: productTemplate,
       path: `/${product.key.toLowerCase()}/${product.masterData.current.slug}`,
       context: {
-          key: product.key
-      }
-    });
+        key: product.key,
+      },
+    })
   })
 
-  console.log(JSON.stringify(data.posts.edges));
+  console.log(JSON.stringify(data.posts.edges))
   data.posts.edges.forEach(({ node }) => {
     createPage({
       path: `/${node.category.slug}/${node.slug}`,
@@ -77,8 +79,6 @@ exports.createPages = async ({ graphql, actions }) => {
   })
   */
 
-  
-
   const posts = data.posts.edges
   const postsPerPage = 9
   const numPages = Math.ceil(posts.length / postsPerPage)
@@ -95,5 +95,4 @@ exports.createPages = async ({ graphql, actions }) => {
       },
     })
   })
-  
 }

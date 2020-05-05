@@ -10,7 +10,10 @@ const Index = ({ data }) => {
     <Layout>
       <SEO title="Home" description={data.site.siteMetadata.description} />
       <StyledHero home img={data.homeImage.childImageSharp.fluid}>
-        <Banner title={data.site.siteMetadata.title} info="Corona Virus"></Banner>
+        <Banner
+          title={data.site.siteMetadata.title}
+          info="Corona Virus"
+        ></Banner>
       </StyledHero>
     </Layout>
   )

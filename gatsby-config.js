@@ -5,8 +5,7 @@
  */
 // eslint-disable-next-line
 
-
-let graphQLAuthKey = "w6PDFrHKwiHLskDqXGu4FS9W_NXU7K96";
+let graphQLAuthKey = "w6PDFrHKwiHLskDqXGu4FS9W_NXU7K96"
 
 require("dotenv").config({
   path: `.env`,
