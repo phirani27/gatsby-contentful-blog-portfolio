@@ -4,6 +4,10 @@
  * See: https://www.gatsbyjs.org/docs/gatsby-config/
  */
 // eslint-disable-next-line
+
+
+let graphQLAuthKey = "w6PDFrHKwiHLskDqXGu4FS9W_NXU7K96";
+
 require("dotenv").config({
   path: `.env`,
 })
@@ -12,11 +16,10 @@ require("dotenv").config({
 module.exports = {
   /* Your site config here */
   siteMetadata: {
-    title: "Gatsby starter for Contenful",
-    description: "Gatsby+Contentful for a website with a blog and a portfolio",
-    author: "Emanuele Buccelli",
-    twitterUsername: "@escapemanuele",
-    image: "/index-hero.jpg",
+    title: "Covid-19",
+    description: "Covid-19 Corona Virus",
+    author: "phirani",
+    image: "/covid19Hero.jpg",
     siteUrl: "https://gatsby-contentful-portfolio-blog.netlify.app/",
   },
   plugins: [
@@ -44,10 +47,24 @@ module.exports = {
       },
     },
     {
+      resolve: "gatsby-source-graphql",
+      options: {
+        typeName: "cTools",
+        fieldName: "cTools",
+        url: "https://api.sphere.io/np-dev/graphql",
+        // HTTP headers
+        headers: {
+          Authorization: `Bearer ${graphQLAuthKey}`,
+        },
+        // Additional options to pass to node-fetch
+        fetchOptions: {},
+      },
+    },
+    {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `Gatbsy Contentful Starter`,
-        short_name: `GatsbyContentful`,
+        name: `Covid-19 Corona Virus`,
+        short_name: `Cov19`,
         start_url: `/`,
         background_color: `#6b37bf`,
         theme_color: `#6b37bf`,

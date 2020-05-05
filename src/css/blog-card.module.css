@@ -67,3 +67,17 @@
   text-transform: capitalize;
   color: var(--mainWhite);
 }
+.product {
+  width: calc(33% - 16px);
+  margin: 8px;
+  flex-direction: column;
+  text-align: center;
+  box-shadow: 0 0 0.5em rgba(0,0,0,.2);
+  border-radius: 5px;
+}
+.productList{
+  display: flex;
+  list-style-type: none;
+  flex-wrap: wrap;
+  padding: 100px;
+}

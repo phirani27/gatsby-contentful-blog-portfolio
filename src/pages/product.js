@@ -3,26 +3,24 @@ import Layout from "../components/Layout"
 import StyledHero from "../components/StyledHero"
 import { graphql } from "gatsby"
 import Banner from "../components/Banner"
-import PortfolioCategoryItems from "../components/Portfolio/PortfolioCategoryItems"
-import PortfolioItems from "../components/Portfolio/PortfolioItems"
+import ProductItems from "../components/Product/ProductItems"
 import SEO from "../components/SEO"
 
 export default ({ data }) => {
   return (
     <Layout>
-      <SEO title="Portfolio" />
+      <SEO title="Covid-19 National Pen Products" />
       <StyledHero img={data.contactImage.childImageSharp.fluid}>
-        <Banner title="Portfolio" />
+        <Banner title="National Pen Products" />
       </StyledHero>
-      <PortfolioCategoryItems />
-      <PortfolioItems />
+      <ProductItems/>
     </Layout>
   )
 }
 
 export const getPortfolioImage = graphql`
   query {
-    contactImage: file(relativePath: { eq: "portfolio-header.jpg" }) {
+    contactImage: file(relativePath: { eq: "health-care.png" }) {
       childImageSharp {
         fluid(quality: 90, maxWidth: 4160) {
           ...GatsbyImageSharpFluid_withWebp

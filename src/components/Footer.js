@@ -17,20 +17,13 @@ const Footer = () => {
           )
         })}
       </div>
-      {/* <div className={styles.icons}>
-                {SocialIcons.map((item,index) => {
-                    return <a key={index} href={item.url} target="_blank" rel="noopener noreferrer">
-                        {item.icon}
-                    </a>
-                })}
-            </div> */}
       <div className={styles.copyright}>
         copyright &copy; XXXXXXXXXX {new Date().getFullYear()} All rights
         reserved
       </div>
-      <div className={styles.copyright}>Street N° XXXXX</div>
+      <div className={styles.copyright}>Mumbai</div>
       <div className={styles.created}>
-        Created by <a href={linkProfilo}>Emanuele Buccelli</a>
+        Created by <a href={linkProfilo}>phirani</a>
       </div>
     </footer>
   )

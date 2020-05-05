@@ -16,29 +16,35 @@ exports.createPages = async ({ graphql, actions }) => {
           }
         }
       }
-      portfolioItems: allContentfulPortfolioItem {
-        edges {
-          node {
-            id: contentful_id
-            slug
-            category {
-              slug
+      cTools{
+        products(where:"masterData(published=true) and key in (\\"PRD-VSIPI2V7\\",\\"PRD-ZKUSANIO\\",\\"PRD-PJTRNCEZ\\",\\"PRD-NFPCV9NS\\",\\"PRD-HIBJHDAP\\",\\"PRD-CWKRBO9W\\",\\"PRD-BTV2QQY3\\",\\"PRD-QWGCHDPQ\\")"){
+          count
+          results{
+            key
+            id
+            masterData{
+              current{
+                slug(locale:"en-IE")
+              }
             }
-          }
-        }
-      }
-      portfolioCategories: allContentfulPortfolioItemCategory {
-        edges {
-          node {
-            title
-            slug
-            id: contentful_id
           }
         }
       }
     }
   `)
+  
+  const productTemplate = path.resolve('./src/templates/product-template.js');
+  data.cTools.products.results.forEach( (product) => {
+    createPage({
+      component: productTemplate,
+      path: `/${product.key.toLowerCase()}/${product.masterData.current.slug}`,
+      context: {
+          key: product.key
+      }
+    });
+  })
 
+  console.log(JSON.stringify(data.posts.edges));
   data.posts.edges.forEach(({ node }) => {
     createPage({
       path: `/${node.category.slug}/${node.slug}`,
@@ -49,6 +55,7 @@ exports.createPages = async ({ graphql, actions }) => {
     })
   })
 
+  /*
   data.portfolioItems.edges.forEach(({ node }) => {
     createPage({
       path: `/${node.category.slug}/${node.slug}`,
@@ -68,6 +75,9 @@ exports.createPages = async ({ graphql, actions }) => {
       },
     })
   })
+  */
+
+  
 
   const posts = data.posts.edges
   const postsPerPage = 9
@@ -85,4 +95,5 @@ exports.createPages = async ({ graphql, actions }) => {
       },
     })
   })
+  
 }

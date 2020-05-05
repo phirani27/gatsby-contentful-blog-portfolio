@@ -17,7 +17,10 @@
   color: var(--primaryColor);
   font-size: 1.5rem;
 }
-
+.logoImg{
+   width: 70px;
+   height: 70px;
+}
 .nav-links {
   list-style-type: none;
   transition: var(--mainTransition);
