@@ -46,7 +46,6 @@ exports.createPages = async ({ graphql, actions }) => {
     })
   })
 
-  console.log(JSON.stringify(data.posts.edges))
   data.posts.edges.forEach(({ node }) => {
     createPage({
       path: `/${node.category.slug}/${node.slug}`,
