@@ -14,6 +14,7 @@
     "format:check": "prettier --check \"**/*.{js,jsx,json,md}\"",
     "cy:open": "cypress open",
     "cy:run": "cypress run",
+    "test": "echo \"Error: no test specified\"",
     "deploy": "gatsby build --prefix-paths && gh-pages -d public -r https://$GH_TOKEN@github.com/phirani27/gatsby-contentful-blog-portfolio.git"
   },
   "husky": {
