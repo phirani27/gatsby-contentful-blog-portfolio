@@ -71,6 +71,7 @@
     "eslint-plugin-import": "^2.20.1",
     "eslint-plugin-react": "^7.18.3",
     "gatsby-plugin-eslint": "^2.0.8",
+    "gh-pages": "^2.2.0",
     "husky": "^4.2.3",
     "identity-obj-proxy": "^3.0.0",
     "inquirer": "^7.0.4",
