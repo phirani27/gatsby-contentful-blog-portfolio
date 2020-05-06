@@ -5,7 +5,7 @@
  */
 // eslint-disable-next-line
 
-let graphQLAuthKey = "w6PDFrHKwiHLskDqXGu4FS9W_NXU7K96"
+let graphQLAuthKey = process.env.CTOOLS_TOKEN
 
 require("dotenv").config({
   path: `.env`,
@@ -85,8 +85,8 @@ module.exports = {
         // datalayer to be set before GTM is loaded
         // should be an object or a function that is executed in the browser
         // Defaults to null
-        defaultDataLayer: { platform: "gatsby" }
+        defaultDataLayer: { platform: "gatsby" },
       },
-    }
+    },
   ],
 }
