@@ -14,6 +14,7 @@ require("dotenv").config({
 // eslint-disable-next-line
 module.exports = {
   /* Your site config here */
+  pathPrefix: "/gatsby-contentful-blog-portfolio",
   siteMetadata: {
     title: "Covid-19",
     description: "Covid-19 Corona Virus",
@@ -76,11 +77,11 @@ module.exports = {
       resolve: "gatsby-plugin-google-tagmanager",
       options: {
         id: "GTM-NZR976L",
-  
+
         // Include GTM in development.
         // Defaults to false meaning GTM will only be loaded in production.
         includeInDevelopment: true,
-  
+
         // datalayer to be set before GTM is loaded
         // should be an object or a function that is executed in the browser
         // Defaults to null
