@@ -5,11 +5,11 @@
  */
 // eslint-disable-next-line
 
-let graphQLAuthKey = process.env.CTOOLS_TOKEN
-
 require("dotenv").config({
   path: `.env`,
-})
+});
+
+let graphQLAuthKey = process.env.CTOOLS_TOKEN
 
 // eslint-disable-next-line
 module.exports = {
